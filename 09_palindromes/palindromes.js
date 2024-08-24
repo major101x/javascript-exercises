@@ -1,22 +1,17 @@
-const palindromes = function (string) {
-  // if (string.includes(", ")) {
-  //   console.log(string);
-  //   console.log(string.toLowerCase().split(", "));
-  //   console.log(string.toLowerCase().split(", ").reverse().join(""));
-  //   return (
-  //     string.toLowerCase() ===
-  //     string.toLowerCase().split(", ").reverse().join("")
-  //   );
-  // } else {
-  //   console.log(string);
-  //   console.log(string.toLowerCase().split(""));
-  //   console.log(string.toLowerCase().split("").reverse().join(""));
-  //   return (
-  //     string.toLowerCase() ===
-  //     string.toLowerCase().split("").reverse().join("")
-  //   );
-  // }
-  return string.toLowerCase() === string.toLowerCase().split("").reverse().join("");
+const palindromes = function (word) {
+  const alphaNumeric = "abcdefghijklmnopqrstuvwxyz0123456789";
+
+  const cleanString = word
+    .toLowerCase()
+    .split("")
+    .filter((char) => alphaNumeric.includes(char))
+    .reverse()
+    .join("");
+
+  const result = cleanString.toLowerCase().split("").reverse().join("");
+  console.log(result);
+  const isPalindrome = cleanString === result;
+  return isPalindrome;
 };
 
 // Do not edit below this line
